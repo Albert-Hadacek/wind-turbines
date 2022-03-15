@@ -7,12 +7,12 @@ export default function Dashboard() {
     <div>
       <h1>Dashboard</h1>
       <h2>
-        <Link href="/">
+        <Link href="/dashboard/farm">
           <a>View all wind turbines</a>
-        </Link>
-        {' '}
-        </h2><h2>
-        <Link href="/">
+        </Link>{" "}
+      </h2>
+      <h2>
+        <Link href="/dashboard/create-farm">
           <a>Add new</a>
         </Link>
       </h2>
