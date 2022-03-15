@@ -11,6 +11,7 @@ export default function Dashboard() {
           <a>View all wind turbines</a>
         </Link>
         {' '}
+        </h2><h2>
         <Link href="/">
           <a>Add new</a>
         </Link>
