@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 
 const LoginForm = () => (
@@ -17,9 +18,11 @@ const LoginForm = () => (
             placeholder='Password'
             type='password'
           />
+          <Link href='/dashboard/'>
           <Button color='blue' fluid size='large'>
             Login
           </Button>
+          </Link>
         </Segment>
       </Form>
     </Grid.Column>
