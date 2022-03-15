@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import LoginForm from './account/loginLayout'
+import LoginForm from '../components/user/login'
 import 'semantic-ui-css/semantic.min.css'
 
 
@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <LoginForm></LoginForm>
+        <LoginForm/>
       </main>
 
       <footer className={styles.footer}>
