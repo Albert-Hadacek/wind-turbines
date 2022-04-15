@@ -1,21 +1,12 @@
-import React, { Component } from "react";
-import ButtonEmphasis from "../../components/button/button";
-import Link from "next/link";
+import Layout from '../../components/Layout'
 
-export default function Dashboard() {
+
+const Dashboard = () => {
   return (
-    <div>
+    <Layout>
       <h1>Dashboard</h1>
-      <h2>
-        <Link href="/dashboard/farm">
-          <a>View all wind turbines</a>
-        </Link>{" "}
-      </h2>
-      <h2>
-        <Link href="/dashboard/create-farm">
-          <a>Add new</a>
-        </Link>
-      </h2>
-    </div>
-  );
+    </Layout>
+  )
 }
+
+export default Dashboard
