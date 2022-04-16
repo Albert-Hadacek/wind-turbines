@@ -22,7 +22,7 @@ export default NextAuth({
           throw new Error("Invalid username")
         }
 
-        if(!verifyPassword(password, user.password)) {
+        if(!(await verifyPassword(password, user.password))) {
           throw new Error("Invalid password")
         }
 
