@@ -2,10 +2,12 @@ import {Container, Menu} from 'semantic-ui-react'
 import {signOut, useSession} from 'next-auth/react'
 import {useRouter} from 'next/router'
 import {useEffect} from 'react'
+import Loader from './Loader'
+import {useLoading} from '../context/LoadingContext'
 
 
 const Layout = ({children}) => {
-
+  const { loading, setLoading } = useLoading();
   const router = useRouter()
 
   const { data: session, status } = useSession()
@@ -22,8 +24,8 @@ const Layout = ({children}) => {
     await signOut({redirect: false})
   }
 
-  if(status === "loading") {
-    return <div>Please wait...</div>
+  if(status === "loading" || loading) {
+    return <Loader/>
   }
 
 

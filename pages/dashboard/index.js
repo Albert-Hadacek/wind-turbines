@@ -1,10 +1,12 @@
 import Layout from '../../components/Layout'
-
+import Farms from '../../components/dashboard/Farms'
+import Upload from '../../components/dashboard/Upload'
 
 const Dashboard = () => {
   return (
     <Layout>
-      <h1>Dashboard</h1>
+      <Farms/>
+      <Upload/>
     </Layout>
   )
 }

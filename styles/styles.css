@@ -1,7 +1,11 @@
+#__next {
+    height: 100%!important;
+}
 .dashboard-menu {
     background-color: #00b5ad!important;
     border-radius: 0px!important;
     min-height: 5rem!important;
+    margin-bottom: 5rem!important;
 }
 
 .dashboard-menu .item {
@@ -17,4 +21,31 @@
 .dashboard-menu .item:hover {
     cursor: pointer;
     background-color: rgba(0, 145, 138, 0.6) !important;
+}
+
+.header-link {
+    font-size: 1.5rem!important;
+    margin-bottom: 1.5rem!important;
+    color: #00b5ad!important;
+    display: inline-block;
+}
+
+.header-link:hover {
+    opacity: 0.8;
+}
+
+.card-group {
+    margin-bottom: 1px!important;
+}
+
+.spinner-wrapper {
+    padding-top: calc(50vh - 30px);
+}
+
+.card-group-dashboard {
+    justify-content: space-between!important;
+}
+
+.farms-overview {
+    margin-bottom: 5rem!important;
 }

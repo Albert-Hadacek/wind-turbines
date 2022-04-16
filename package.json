@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "setup": "prisma generate",
     "lint": "next lint",
     "vercel-build": "prisma generate && next build"
   },
@@ -16,7 +17,10 @@
     "next-auth": "^4.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-loader-spinner": "^6.0.0-0",
     "react-toastify": "^8.2.0",
+    "reactjs-simple-spinner": "^0.0.5",
+    "recharts": "^2.1.9",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.1.2"
   },
