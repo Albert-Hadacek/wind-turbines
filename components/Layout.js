@@ -1,7 +1,28 @@
 import {Container, Menu} from 'semantic-ui-react'
+import {signOut, useSession} from 'next-auth/react'
+import {useRouter} from 'next/router'
+import {loadGetInitialProps} from 'next/dist/shared/lib/utils'
+import {useEffect} from 'react'
 
 
 const Layout = ({children}) => {
+
+  const router = useRouter()
+
+  const { data: session, status } = useSession()
+
+
+  useEffect(() => {
+    if(status === "unauthenticated") {
+      router.replace("/")
+    }
+  },[status])
+
+
+  const handleLogout = async () => {
+    await signOut({redirect: false})
+  }
+
 
   return (
     <>
@@ -24,7 +45,9 @@ const Layout = ({children}) => {
           Turbines
         </Menu.Item>
           <Menu.Item
+            as={"div"}
             name='upcomingEvents'
+            onClick={handleLogout}
           >
             Logout
           </Menu.Item>
