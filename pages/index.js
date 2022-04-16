@@ -1,13 +1,21 @@
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 import {toast} from 'react-toastify'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Error from '../components/Error'
-import {signIn} from 'next-auth/react'
+import {signIn, useSession} from 'next-auth/react'
 import {useRouter} from 'next/router'
 
 const Login = () => {
 
   const router = useRouter()
+  const { data: session, status } = useSession()
+  useEffect(() => {
+    if(status === "authenticated") {
+      router.replace("/dashboard")
+    }
+  },[status])
+
+
 
   const [form, setForm] = useState({
     email: '',
@@ -21,7 +29,7 @@ const Login = () => {
       ...form
     })
 
-    console.log(result)
+
 
     if(result.error) {
       toast.error("Something went wrong - recheck your password and email")
