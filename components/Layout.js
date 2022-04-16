@@ -10,8 +10,6 @@ const Layout = ({children}) => {
 
   const { data: session, status } = useSession()
 
-  console.log(session)
-
 
   useEffect(() => {
     if(status === "unauthenticated") {
@@ -22,6 +20,10 @@ const Layout = ({children}) => {
 
   const handleLogout = async () => {
     await signOut({redirect: false})
+  }
+
+  if(status === "loading") {
+    return <div>Please wait...</div>
   }
 
 

@@ -16,13 +16,14 @@ const Login = () => {
   },[status])
 
 
-
+  const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({
     email: '',
     password: ''
   })
 
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault()
     const result = await signIn("credentials", {
       redirect: false,
@@ -33,8 +34,11 @@ const Login = () => {
 
     if(result.error) {
       toast.error("Something went wrong - recheck your password and email")
+      setLoading(false)
       return
     }
+
+    setLoading(false)
 
     router.push("/dashboard")
 
@@ -66,7 +70,7 @@ const Login = () => {
               onChange={(e) => {setForm({...form, password: e.target.value})}}
             />
 
-            <Button color='teal' fluid size='large'>
+            <Button color='teal' fluid size='large' loading={loading}>
               Login
             </Button>
           </Segment>
