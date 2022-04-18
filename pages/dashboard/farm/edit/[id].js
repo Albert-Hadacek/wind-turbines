@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AddFarm = () => {
+const EditFarm = () => {
   return (
     <div>
       
     </div>
   )
-}
+};
 
-export default AddFarm
+  export default EditFarm;

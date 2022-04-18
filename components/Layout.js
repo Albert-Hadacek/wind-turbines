@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import {useEffect} from 'react'
 import Loader from './Loader'
 import {useLoading} from '../context/LoadingContext'
+import Error from './Error'
 
 
 const Layout = ({children}) => {
@@ -60,6 +61,7 @@ const Layout = ({children}) => {
       <Container>
         {children}
       </Container>
+      <Error />
     </>
   )
 }

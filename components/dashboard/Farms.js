@@ -14,14 +14,16 @@ const data = [
     location: "Scotland",
     created: "21/05/22",
     description: "Lorem ipsum blah blah",
-    turbinesCount: 5
+    turbinesCount: 5,
+    customId: "dsda"
   },
   {
     title: "Farm3",
     location: "Scotland",
     created: "21/05/22",
     description: "Lorem ipsum blah blah",
-    turbinesCount: 5
+    turbinesCount: 5,
+    customId: "sdasd"
   }
 ]
 
@@ -34,7 +36,7 @@ const Farms = () => {
         {data.map((d) => (
           <Card>
             <Card.Content>
-              <Card.Header>{d.title}</Card.Header>
+              <Card.Header>{d.title} - {d.customId}</Card.Header>
               <Card.Meta>{d.location}</Card.Meta>
               <Card.Description>
                 {d.description}
@@ -55,7 +57,10 @@ const Farms = () => {
         ))}
       </Card.Group>
       <div>
-        <button className="ui teal button">+ Create</button>
+        <Link href={"/dashboard/farm/add"}>
+          <button className="ui teal button">+ Create</button>
+        </Link>
+
       </div>
     </div>
   )
