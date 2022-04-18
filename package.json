@@ -22,7 +22,8 @@
     "reactjs-simple-spinner": "^0.0.5",
     "recharts": "^2.1.9",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.1.2"
+    "semantic-ui-react": "^2.1.2",
+    "use-file-picker": "^1.4.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.24",
