@@ -1,7 +1,6 @@
 import React from 'react'
 import {Segment, Header, Icon, Button} from 'semantic-ui-react'
 import Link from 'next/link'
-import FilePicker from '../FilePicker'
 
 const Upload = () => {
   return (
@@ -12,7 +11,7 @@ const Upload = () => {
           <Icon name='pdf file outline' />
           Let's upload some new data
         </Header>
-        <FilePicker />
+        <Button primary>Upload data form</Button>
       </Segment>
     </>
 
@@ -20,5 +19,3 @@ const Upload = () => {
 }
 
 export default Upload
-
-//<Button primary>Upload data form</Button>
