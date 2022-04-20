@@ -2,7 +2,7 @@
 
 import { useFilePicker } from "use-file-picker";
 
-export default function FilePicker() {
+export default function FilePicker(props) {
 
   const [
     openFileSelector,

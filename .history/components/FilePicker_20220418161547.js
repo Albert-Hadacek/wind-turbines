@@ -2,7 +2,7 @@
 
 import { useFilePicker } from "use-file-picker";
 
-export default function FilePicker() {
+export default function FilePicker(props) {
 
   const [
     openFileSelector,
@@ -12,9 +12,9 @@ export default function FilePicker() {
     
     readAs: "DataURL", // available formats: "Text" | "BinaryString" | "ArrayBuffer" | "DataURL"
    
-    accept: [".json", ".csv"],  // accept: '.json', '.csv'
+    accept: [".json", ".pdf", ".csv"],  // accept: '.ics,.pdf', '.csv'
 
-    limitFilesConfig: { min: 1, max: 1 }
+    limitFilesConfig: { min: 2, max: 3 }
     // minFileSize: 1, // in megabytes
     // maxFileSize: 1,
     // readFilesContent: false, // ignores file content
@@ -39,9 +39,9 @@ export default function FilePicker() {
     return <div>Loading...</div>;
   }
 
-  const files = () => {plainFiles.map((file) => (
+  let files = {plainFiles.map((file) => (
     <div key={file.name}>{file.name}</div>
-  ))}
+  ))};
 
   return (
     <div>

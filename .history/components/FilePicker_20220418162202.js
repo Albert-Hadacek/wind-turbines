@@ -2,7 +2,7 @@
 
 import { useFilePicker } from "use-file-picker";
 
-export default function FilePicker() {
+export default function FilePicker(props) {
 
   const [
     openFileSelector,
@@ -12,7 +12,7 @@ export default function FilePicker() {
     
     readAs: "DataURL", // available formats: "Text" | "BinaryString" | "ArrayBuffer" | "DataURL"
    
-    accept: [".json", ".csv"],  // accept: '.json', '.csv'
+    accept: [".json", ".pdf", ".csv"],  // accept: '.ics,.pdf', '.csv'
 
     limitFilesConfig: { min: 1, max: 1 }
     // minFileSize: 1, // in megabytes
