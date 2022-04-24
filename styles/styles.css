@@ -49,3 +49,11 @@
 .farms-overview {
     margin-bottom: 5rem!important;
 }
+
+.upload-wrapper {
+    display: flex;
+}
+
+.upload-item {
+    text-align: center;
+}

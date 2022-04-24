@@ -1,6 +1,7 @@
 //code found on https://www.npmjs.com/package/use-file-picker
 
 import { useFilePicker } from "use-file-picker";
+import {Button} from 'semantic-ui-react'
 
 export default function FilePicker() {
   const [
@@ -13,7 +14,7 @@ export default function FilePicker() {
    
     accept: [".json", ".pdf", ".csv"],  // accept: '.ics,.pdf', '.csv'
     
-    limitFilesConfig: { min: 2, max: 3 }
+    limitFilesConfig: { min: 1, max: 3 }
     // minFileSize: 1, // in megabytes
     // maxFileSize: 1,
     // readFilesContent: false, // ignores file content
@@ -34,24 +35,16 @@ export default function FilePicker() {
     );
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
-    <div>
-      <button onClick={() => openFileSelector()}>Select file </button>
-      <button onClick={() => clear()}>Clear</button>
-      <br />
-      Number of selected files:
-      {plainFiles.length}
-      <br />
-      {/* If readAs is set to DataURL, You can display an image */}
-      {!!filesContent.length && <img src={filesContent[0].content} />}
-      <br />
-      {plainFiles.map((file) => (
-        <div key={file.name}>{file.name}</div>
-      ))}
+    <>
+    <div className="upload-wrapper">
+      <Button color='teal' onClick={() => openFileSelector()} loading={loading}>Select file</Button>
+      <Button color='red' onClick={() => clear()} loading={loading}>Clear</Button>
     </div>
+      {plainFiles.map((file) => (
+        <div className="upload-item" key={file.name}>{file.name}</div>
+      ))}
+    </>
   );
 }
