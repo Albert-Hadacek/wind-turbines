@@ -1,10 +1,11 @@
-import {Container, Menu} from 'semantic-ui-react'
+import {Container, Dropdown, Menu} from 'semantic-ui-react'
 import {signOut, useSession} from 'next-auth/react'
 import {useRouter} from 'next/router'
 import {useEffect} from 'react'
 import Loader from './Loader'
 import {useLoading} from '../context/LoadingContext'
 import Error from './Error'
+import { Icon } from 'semantic-ui-react'
 
 
 const Layout = ({children}) => {
@@ -50,13 +51,20 @@ const Layout = ({children}) => {
         >
           Turbines
         </Menu.Item>
-          <Menu.Item
-            as={"div"}
-            name='upcomingEvents'
-            onClick={handleLogout}
-          >
-            Logout
-          </Menu.Item>
+
+        <Dropdown
+          item
+          text='John Doe'
+        >
+          <Dropdown.Menu>
+            <Dropdown.Item icon='setting' text='Settings'></Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item as={"div"} color='red' onClick={handleLogout} icon='logout' text='Logout'></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+
+        
+
     </Menu>
       <Container>
         {children}
@@ -65,5 +73,13 @@ const Layout = ({children}) => {
     </>
   )
 }
+
+/*<Menu.Item
+as={"div"}
+name='upcomingEvents'
+onClick={handleLogout}
+>
+Logout
+</Menu.Item>*/
 
 export default Layout
